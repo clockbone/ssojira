@@ -1,0 +1,20 @@
+这是一个jira接入单点登录自己重写的Authenticator验证类,当然如果没有特殊要求,你完全可以用
+cas-client-integration-atlassian-3.5.0-jira7.jar中提供的Jira7CasAuthenticator类.
+当然我自己重新实现的JiraAuth类也是参照Jira7CasAuthenticator来写的,我自写这个类只是为了查看cas中是怎么获取
+用户信息的,它和cas服务是如果通信的.也方面我们对以后getUser方法作一些改动.
+
+1 lib目录用于导入pom文件以外的jar包
+比如jira-api-6.3.6.jar jira-cor-6.3.jar是根据安装的jira版本号来的,所以没有放到pom中导入.
+2 配置插件,是为了避免在执行打包命令时,解决lib目录中额外引入的包不认识的情况
+加入下面插件,打包时就正常了~
+<plugin>
+    <artifactId>maven-compiler-plugin</artifactId>
+    <configuration>
+        <source>1.7</source>
+        <target>1.7</target>
+        <encoding>UTF-8</encoding>
+        <compilerArguments>
+            <extdirs>lib</extdirs>
+        </compilerArguments>
+    </configuration>
+</plugin>
