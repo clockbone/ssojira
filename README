@@ -18,3 +18,4 @@ cas-client-integration-atlassian-3.5.0-jira7.jar中提供的Jira7CasAuthenticato
         </compilerArguments>
     </configuration>
 </plugin>
+3 打包完成上传到jira 的lib目录下,然后配置Authenticator为你自己的类就可以了
